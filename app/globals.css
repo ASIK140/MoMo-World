@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.ImageBackground {
+    display: flex;
+    flex-direction: row;
+    min-width: 112px;
+    min-height: 56px;
+    margin-top: 4rem;
+    justify-content: center;
+    align-content: center;
+
+}
