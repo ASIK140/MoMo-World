@@ -1,12 +1,38 @@
-import {ScrollView,Image, StyleSheet, Text, View} from 'react-native'
-import React from 'react'
+import {ScrollView, Image, StyleSheet, Text, View, ActivityIndicator, FlatList} from 'react-native'
+import React, {useEffect, useState} from 'react'
 import {images} from "@/constants/images";
 import {icons} from "@/constants/icons";
 import SearchBar from "@/components/SearchBar";
 import {useRouter} from "expo-router";
+import {fetchMovies} from "@/services/api";
+import MovieCard from "@/components/MovieCard";
+interface Movie {
+    Title: string;
+    Year: string;
+    imdbID: string;
+    Type: string;
+    Poster: string;
+}
 
 const Index = () => {
-        const router = useRouter();
+        const router = useRouter()
+        const [movies, setMovies] = useState<Movie[]>([])
+        const [loading, setLoading] = useState(true)
+    useEffect(() => {
+        const getMovies=async ()=>{
+            try {
+                const data = await fetchMovies();
+                if (data && data.Response==="True" && data.Search){
+                    setMovies(data.Search);
+                }
+            }catch (err){
+                console.error("Error fetching movies: ", err)
+            }finally {
+                setLoading(false)
+            }
+        }
+        getMovies()
+    }, []);
     return (
     <View className="flex-1 bg-primary">
         <Image source={images.bg} className="absolute w-full z-0"/>
@@ -20,7 +46,39 @@ const Index = () => {
                     onPress={()=>router.push("/search")}
                     placeholder={"Search for a movie"}
                 />
+                {
+                    loading?(
+                        <ActivityIndicator size="large" color="#000ff" />
+
+                    ):(
+                        <>
+                            <Text className="text-lg text-white font-bold mt-5 mb-2">Latest Movies</Text>
+
+                            <FlatList data={movies} renderItem={
+                                ({item})=>(
+                                    <MovieCard
+                                        {...item}
+                                    />
+                                )
+                            }
+                                      keyExtractor={(item) => item.imdbID}
+                                      numColumns={3}
+                                      columnWrapperStyle={
+                                {
+                                    justifyContent:"flex-start",
+                                    gap:20,
+                                    paddingRight:5,
+                                    marginBottom:10
+                                }
+                                      }
+                                      className="mt-2 pb-32"
+                                      scrollEnabled={false}
+                            />
+                        </>
+                    )
+                }
             </View>
+
         </ScrollView>
     </View>
   )
