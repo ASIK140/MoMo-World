@@ -41,3 +41,21 @@ export const fetchMovies = async (query=""): Promise<OmdbResponse | null> => {
         return null;
     }
 };
+
+export const fetchMoviesDetails = async (movieId:string): Promise<MovieDetails | null> => {
+    const endpoint = `${API_CONFIG.BASE_URL}?apikey=${API_CONFIG.API_KEY}&i=${movieId}&plot=full`;
+    try {
+        const response = await fetch(endpoint);
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
+        const data: MovieDetails = await response.json();
+
+        return data;
+    } catch (err) {
+        console.error("error", err);
+        return null;
+    }
+};

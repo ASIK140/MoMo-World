@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="32b9e341-ce6f-433a-a21b-3fd7cc8a0f29" name="Changes" comment="&quot;Day 4&quot;">
+    <list default="true" id="32b9e341-ce6f-433a-a21b-3fd7cc8a0f29" name="Changes" comment="&quot;Day 7 Search Page&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(tabs)/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(tabs)/search.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/search.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/SearchBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/SearchBar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/movies/[id].tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/movies/[id].tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interfaces/interfaces.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/interfaces.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/api.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -102,7 +101,7 @@
       <workItem from="1756296966190" duration="2336000" />
       <workItem from="1756299346548" duration="962000" />
       <workItem from="1756302192896" duration="444000" />
-      <workItem from="1756319220480" duration="1097000" />
+      <workItem from="1756319220480" duration="10810000" />
     </task>
     <task id="LOCAL-00001" summary="&quot;Day 4&quot;">
       <option name="closed" value="true" />
@@ -112,7 +111,15 @@
       <option name="project" value="LOCAL" />
       <updated>1755901671291</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="&quot;Day 7 Search Page&quot;">
+      <option name="closed" value="true" />
+      <created>1756320714998</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1756320714998</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -135,6 +142,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="&quot;Day 4&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="&quot;Day 4&quot;" />
+    <MESSAGE value="&quot;Day 7 Search Page&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;Day 7 Search Page&quot;" />
   </component>
 </project>
