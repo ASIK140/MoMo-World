@@ -13,7 +13,6 @@ interface Movie {
     Type: string;
     Poster: string;
 }
-
 const Index = () => {
         const router = useRouter()
         const [movies, setMovies] = useState<Movie[]>([])

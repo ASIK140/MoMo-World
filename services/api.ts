@@ -22,8 +22,10 @@ interface OmdbResponse {
     Response: string;
 }
 
-export const fetchMovies = async (): Promise<OmdbResponse | null> => {
-    const endpoint = `${API_CONFIG.BASE_URL}?apikey=${API_CONFIG.API_KEY}&s=movie&y=2025&type=movie`;
+export const fetchMovies = async (query=""): Promise<OmdbResponse | null> => {
+    const endpoint = query?
+        `${API_CONFIG.BASE_URL}?apikey=${API_CONFIG.API_KEY}&s=${query}`
+    :`${API_CONFIG.BASE_URL}?apikey=${API_CONFIG.API_KEY}&s=movie&y=2025&type=movie`;
     try {
         const response = await fetch(endpoint);
 
